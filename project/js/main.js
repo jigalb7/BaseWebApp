@@ -7,3 +7,25 @@ function showPicture(){
   // jQuery can do a lot of crazy stuff, so make sure to Google around to find out more
   
 }
+
+
+
+function getWeather(searchQuery){
+  var url ="https://api.openweathermap.org/data/2.5/weather?q="+searchQuery+"&units=metric&APPID="+apiKey;
+  
+  $(".city").text("");
+  $(".temp").text("");
+  $(".error-message").text("");
+  $.ajax(url,{success:function(data){
+    
+    $(".city").text(data.name);
+    $(".temp").text(data.main.temp);
+  }, error: function(error){
+    $(".error-message").text("an error ocurred");
+  }});
+}
+
+function searchWeather(){
+  var searchQuery = $(".search").val();
+  getWeather(searchQuery);
+}

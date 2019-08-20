@@ -22,10 +22,18 @@ button {
 }
 
 .page-header {
-  background-color: #00bda5;
+  background-color: #0052bd;
   padding-top: 40px;
   padding-bottom: 80px;
   color: #ffffff;
+}
+
+.nav-elem{
+  color:#40b9ff;
+}
+
+.nav-elem:hover{
+  color:#ffffff;
 }
 
 #image img {
